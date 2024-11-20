@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Current Exchange Rates</h1>
+        <ul>
+            {% for key, value in rates.items %}
+                <li>{{key}}: {{value}}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
