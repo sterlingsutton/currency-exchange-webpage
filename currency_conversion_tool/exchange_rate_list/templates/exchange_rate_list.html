@@ -2,6 +2,7 @@
 <html>
     <body>
         <h1>Current Exchange Rates</h1>
+        <p>Base Currency: {{base}}</p>
         <ul>
             {% for key, value in rates.items %}
                 <li>{{key}}: {{value}}</li>
