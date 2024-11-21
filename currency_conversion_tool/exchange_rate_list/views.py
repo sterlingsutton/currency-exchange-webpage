@@ -14,3 +14,6 @@ def exchange_rate_list(request):
         'base': base
     }
     return HttpResponse(template.render(context, request))
+
+def exchange_calculator(request):
+    
