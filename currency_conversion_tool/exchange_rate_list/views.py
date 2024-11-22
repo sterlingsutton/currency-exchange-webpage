@@ -16,4 +16,10 @@ def exchange_rate_list(request):
     return HttpResponse(template.render(context, request))
 
 def exchange_calculator(request):
+    currencies = requests.get('https://api.frankfurter.app/currencies').json()
+    template = loader.get_template('exchange_calculator.html')
+    context = {
+        'currencies': currencies
+    }
+    return HttpResponse(template.render(context, request))
     
