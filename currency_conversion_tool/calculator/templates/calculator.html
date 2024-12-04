@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <form method="post">
+        <form method="post" action="">
             {% csrf_token %}
             {{ form }}
             <input type="submit" value="Submit"></input>
         </form>
+        {% if target_amount != None %}
+            <p>Target Amount: {{ target_amount }} {{target_currency}}</p>
+        {% endif %}
     </body>
 </html>
