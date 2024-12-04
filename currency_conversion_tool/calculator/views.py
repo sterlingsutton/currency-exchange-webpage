@@ -21,8 +21,9 @@ def calculator(request):
                 exchange_rate = 1.0
             target_amount = base_amount * exchange_rate
             target_amount = round(target_amount, 2)
+            target_amount_str = f"{target_amount:.2f}"
 
-            return render(request, 'calculator.html', {'form': form, 'target_amount': target_amount, 'target_currency': target_currency})
+            return render(request, 'calculator.html', {'form': form, 'target_amount': target_amount_str, 'target_currency': target_currency})
 
     form = CalculatorForm()
     return render(request, 'calculator.html', {'form': form, 'target_amount': None, 'target_currency': None})
