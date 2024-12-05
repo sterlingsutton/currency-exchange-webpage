@@ -10,5 +10,5 @@ class CalculatorForm(forms.Form):
     currency_dict = dict((key, f"{value} ({key})") for key, value in res.json().items())
     
     base_amount = forms.FloatField(min_value=0)
-    base_currency = forms.ChoiceField(choices=currency_dict)
-    target_currency = forms.ChoiceField(choices=currency_dict)
+    base_currency = forms.ChoiceField(choices=currency_dict, initial='USD')
+    target_currency = forms.ChoiceField(choices=currency_dict, initial='EUR')
