@@ -2,9 +2,9 @@
 <html>
     <head>
         <style>
-            #calculator-form {
-                background-color: beige;
-                border-style: inset;
+            #calculator-div {
+                background-color: be;
+                border-style: groove;
                 margin: 1em;
                 padding: 1em;
                 width: fit-content;
@@ -14,22 +14,22 @@
             #calculator-form > * {
                 padding: 0.5em;
             }
-            #target-amount {
-                margin: 1em;
-            }
             * {
                 font-family: Helvetica, sans-serif;
             }
         </style>
     </head>
     <body>
-        <form method="post" action="" id="calculator-form">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit"></input>
-        </form>
-        {% if target_amount != None %}
-            <p id="target-amount">Target Amount: {{ target_amount }} {{target_currency}}</p>
-        {% endif %}
+        <h1>Currency Conversion Calculator</h1>
+        <div id="calculator-div">
+            <form method="post" action="" id="calculator-form">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit"></input>
+            </form>
+            {% if target_amount != None %}
+                <p id="target-amount">Target Amount: {{ target_amount }} {{target_currency}}</p>
+            {% endif %}
+        </div>
     </body>
 </html>
