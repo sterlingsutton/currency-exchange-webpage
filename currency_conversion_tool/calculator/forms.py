@@ -1,6 +1,5 @@
 from django import forms
 import requests
-import json
 
 import requests.structures
 
